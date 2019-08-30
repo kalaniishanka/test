@@ -9,9 +9,11 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.model.Person;
 
 @Repository
-public interface PersonRepository extends MongoRepository <Person,String>{
+public interface PersonRepository extends MongoRepository <Person, Integer>{
 	public Person findByFirstName(String firstName);
-	
+	//
+	public Person findById(int id);
+	//
 	 public List<Person> findByAge(int age);
 
 }

@@ -18,8 +18,8 @@ public class PersonController {
 	
 	
 	@RequestMapping("/create")
-	public String create(@RequestParam String firstName,@RequestParam String lastName,@RequestParam int age) {
-		Person p = personService.create(firstName, lastName, age);
+	public String create(@RequestParam String firstName,@RequestParam String lastName,@RequestParam int age,@RequestParam int id) {
+		Person p = personService.create(firstName, lastName, age,id);
 		return p.toString();
 		}
 	
@@ -46,8 +46,8 @@ public class PersonController {
 	}
 	@RequestMapping("/delete")
 	
-	public String delete(@RequestParam String firstName) {
-		personService.delete(firstName);
+	public String delete(@RequestParam int id) {
+		personService.delete(id);
 		return "Deleted";
 	}
 	@RequestMapping("/deleteAll")

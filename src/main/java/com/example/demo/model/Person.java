@@ -1,24 +1,24 @@
 package com.example.demo.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Person {
-
-	String id;
+    @Id
+	int id;
 	String firstName;
 	String lastName;
 	int age;
 
-	public Person(String firstName, String lastName, int age) {
+	public Person(String firstName, String lastName, int age, int id) {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-
+        this.id=id;
 	}
 
-	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -42,11 +42,18 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public String toString(){
-		return "Person First Name: "+firstName+" Last Name: "+lastName+" age: "+age;
 
-	
+	public int getId() {
+		return id;
 	}
-	
-	
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String toString() {
+		return "Person Id :"+ id + " First Name: " + firstName + " Last Name: " + lastName + " age: " + age;
+
+	}
+
 }
