@@ -30,6 +30,28 @@ public class PersonService {
 	   return personRepository.findByFirstName(firstName);
    }
 
+//Update
+ public Person update(String firstName,String lastName,int age) {
+	 Person p = personRepository.findByFirstName(firstName);
+	 p.setLastName(lastName);
+	 p.setAge(age);
+	 return personRepository.save(p);
 
+ }
+ //Delete
+ 
+ public void delete(String firstName) {
+	 Person p=personRepository.findByFirstName(firstName);
+	 
+	 personRepository.delete(p);
+	 
+	 
+ }
 
+ public void deleteAll() {
+	 personRepository.deleteAll();
+	 
+ }
+ 
+ 
 }

@@ -43,7 +43,7 @@ public class Person {
 		this.age = age;
 	}
 	public String toString(){
-		return "Person First Name:"+firstName+"Last Name:"+lastName+"age:"+age;
+		return "Person First Name: "+firstName+" Last Name: "+lastName+" age: "+age;
 
 	
 	}
